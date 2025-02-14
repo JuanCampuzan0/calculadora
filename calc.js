@@ -14,6 +14,29 @@ document.addEventListener('DOMContentLoaded', function () {
     buttons.forEach(button => {
         button.addEventListener('click', () => handleButtonClick(button));
     });
+document.addEventListener("DOMContentLoaded", function () {
+    const historyList = document.getElementById("history-list");
+    document.addEventListener("DOMContentLoaded", function () {
+        const historyList = document.getElementById("history-list");
+        const clearHistoryButton = document.getElementById("clear-history");
+    
+        if (clearHistoryButton) {
+            clearHistoryButton.addEventListener("click", function () {
+                historyList.innerHTML = ""; // Borra el contenido de la lista
+                localStorage.removeItem("calcHistory"); // Elimina el historial almacenado
+            });
+        }
+    });
+    
+    const clearHistoryButton = document.getElementById("clear-history");
+
+    if (clearHistoryButton) {
+        clearHistoryButton.addEventListener("click", function () {
+            historyList.innerHTML = ""; // Borra el contenido de la lista
+            localStorage.removeItem("calcHistory"); // Elimina el historial almacenado
+        });
+    }
+});
 
     const historyButton = document.getElementById('history');
     historyButton.addEventListener('click', toggleHistory);
